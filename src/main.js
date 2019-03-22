@@ -9,7 +9,7 @@ import 'mint-ui/lib/style.css'
 import '../static/js/flexible'
 
 //全局使用
-Vue.use(Mint)
+//Vue.use(Mint)
 
 Vue.config.productionTip = false
 
