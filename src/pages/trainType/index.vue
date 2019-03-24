@@ -18,8 +18,8 @@
 </script>
 
 <style lang="less">
-  @import "../../static/site.comm.less";
-  @import "../../static/site.vars.less";
+  @import "../../../static/site.comm.less";
+  @import "../../../static/site.vars.less";
 
   .index {
 
