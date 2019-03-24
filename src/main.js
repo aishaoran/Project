@@ -5,11 +5,11 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import 'mint-ui/lib/style.css'
+import Mint from 'mint-ui'
 import '../static/js/flexible'
 
 //全局使用
-//Vue.use(Mint)
+Vue.use(Mint)
 
 Vue.config.productionTip = false
 
