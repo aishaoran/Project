@@ -2,15 +2,14 @@
   <div class="top">
     <ul class="nav">
       <li :class="['nav_li',{open_code:item.url == curPath}]"
-          v-for="(item,index) in topList" :key="index" @click="jump(index)">{{item.name}}
-      </li>
+          v-for="(item,index) in topList" :key="index" @click="jump(index)">{{item.name}}</li>
     </ul>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'top',
+    name: 'top',//组件名
     data() {
       return {
         openIndex: 0,
@@ -21,6 +20,7 @@
         ]
       }
     },
+    //计算属性
     computed: {
       curPath() {
         return '#' + this.$route.path || '';
@@ -40,18 +40,21 @@
   @import "../../../static/site.vars.less";
 
   .top {
-    height: 0.5rem;
+    line-height: 1rem;
     width: 9rem;
-    margin: 0 auto;
     border-radius: 0px 0px 10px 10px;
+    .font-dpr(18px);
     background: url("../../../static/img/nav.png") repeat-x;
     color: @div_bk_color;
+    position: fixed;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
     .nav {
       .nav_li {
         width: 3rem;
+        line-height: 0.8rem;
         display: inline-block;
-        line-height: 0.5rem;
-        font-weight: bold;
         box-sizing: border-box;
         cursor: pointer;
         border-left: 1px solid #fff;

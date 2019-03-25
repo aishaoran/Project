@@ -1,16 +1,19 @@
 /*公共样式*/
-*{
+* {
   margin: 0;
   padding: 0;
 }
-html,body{
+
+html, body {
   height: 100%;
 }
-html{
+
+html {
   background: url("../static/img/bk.jpg");
 }
-.clearfix{
-  &:after{
+
+.clearfix {
+  &:after {
     content: "";
     visibility: hidden;
     display: block;
@@ -18,28 +21,33 @@ html{
     height: 0;
   }
 }
-a{
+
+a {
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
-a,input,select,button,span,label,div,textarea{
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
-  -moz-tap-highlight-color:rgba(0,0,0,0);
-  -mz-tap-highlight-color:rgba(0,0,0,0);
-  -o-tap-highlight-color:rgba(0,0,0,0);
+
+a, input, select, button, span, label, div, textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -mz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-input,select,button,span,label{
-  outline: none; border:none;
+
+input, select, button, span, label {
+  outline: none;
+  border: none;
 }
-textarea{
+
+textarea {
   resize: none;
 }
-.font-dpr(@font-size){
-  [data-dpr='1'] & {
-    font-size: @font-size * 4;
-  }
+
+.font-dpr(@font-size) {
+  font-size: @font-size;
   [data-dpr="2"] & {
     font-size: @font-size * 2;
   }

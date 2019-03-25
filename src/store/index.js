@@ -10,7 +10,16 @@ import questionBank from './modules/questionBank'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules:{//模块
+  state:{//状态
+    userInfo:{userName:''},  //存储用户信息
+  },
+  mutations:{//计算属性
+
+  },
+  actions:{//跳转
+
+  },
+  modules:{//引用模块
     questionBank,
   }
 })

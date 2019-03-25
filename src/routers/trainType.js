@@ -15,9 +15,9 @@ export default{
       redirect: 'home'//重定向
     },
     {//首页——选择训练方式
-      path: 'home',
-      name: 'home',
-      component: home
+      path: 'home',//路径
+      name: 'home',//别名
+      component: home//组件
     },
     {//闪算训练
       path: 'fastComputation',

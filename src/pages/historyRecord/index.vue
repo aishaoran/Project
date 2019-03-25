@@ -1,15 +1,13 @@
 <template>
-  <div class="index">
-    <top></top>
+  <div class="historyIndex">
+    历史记录的公共页，历史记录的所有子页面都有此段
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import top from '@/components/top/index'
-
   export default {
-    name: 'index',
-    components:{top},
+    name: 'historyIndex',
     data() {
       return {
       }
@@ -20,8 +18,9 @@
 <style lang="less">
   @import "../../../static/site.comm.less";
   @import "../../../static/site.vars.less";
-
-  .index {
-
+  .historyIndex {
+    margin-top: 1rem;
+    padding: 0.05rem;
+    .font-dpr(14px);
   }
 </style>

@@ -1,15 +1,14 @@
 <template>
   <div class="index">
-    <top></top>
+    系统首页，介绍该系统
+    <div class="introduce"></div>
   </div>
 </template>
 
 <script>
-  import top from '@/components/top/index'
 
   export default {
     name: 'index',
-    components:{top},
     data() {
       return {
       }
@@ -22,6 +21,11 @@
   @import "../../static/site.vars.less";
 
   .index {
-
+    margin-top: 1rem;
+    padding: 0.05rem;
+    .font-dpr(14px);
+    .introduce{
+      height: 500px;
+    }
   }
 </style>

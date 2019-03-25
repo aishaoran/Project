@@ -2,14 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './routers/base'
-import store from './store'
+import router from './routers/base'//引入路由
+import store from './store'//引入vuex的仓库
 
 import Mint from 'mint-ui'
 import '../static/js/flexible'
 
 //全局使用
-Vue.use(Mint)
+Vue.use(Mint)//UI插件
 
 Vue.config.productionTip = false
 
@@ -18,6 +18,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: { App },//组件声明
   template: '<App/>'
 })

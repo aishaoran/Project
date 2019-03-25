@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view/>
+    <top></top><!--应用组件-->
+    <router-view/><!--路由出口-->
   </div>
 </template>
 
@@ -8,8 +9,12 @@
   import axios from 'axios'
   axios.defaults.baseURL = 'http://10.210.225.124:145/'
 
+  //引入组件
+  import top from '@/components/top/index'
+
   export default {
-    name: 'App'
+    name: 'App',
+    components:{top},//组件声明
   }
 </script>
 
