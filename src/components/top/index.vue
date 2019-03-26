@@ -15,7 +15,7 @@
         openIndex: 0,
         topList: [
           {name:"首页",url:'#/index'},
-          {name: "在线训练", url: '#/trainType/home'},
+          {name: "在线训练", url: '#/trainType'},
           {name: "历史记录", url: '#/historyRecord/home'}
         ]
       }
@@ -23,7 +23,7 @@
     //计算属性
     computed: {
       curPath() {
-        return '#' + this.$route.path || '';
+        return '#/' + this.$route.path.split('/')[1] || '';
       }
     },
     methods: {
