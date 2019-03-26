@@ -19,15 +19,15 @@
 </script>
 
 <style lang="less">
-  @import "./../static/site.comm.less";
   @import "./../static/site.vars.less";
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     text-align: center;
-    height: 100%;
+    height: calc(100% - 1rem);
     width: 10rem;
     margin: 0 auto;
+    padding-top: 1rem;
     color: @font_color;
   }
 </style>

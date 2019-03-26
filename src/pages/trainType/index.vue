@@ -23,8 +23,9 @@
   @import "../../../static/site.vars.less";
 
   .trainIndex {
-    margin-top: 1rem;
     padding: 0.05rem;
-    .font-dpr(14px);
+    .font-dpr(16px);
+    box-sizing: border-box;
+    height: 100%;
   }
 </style>

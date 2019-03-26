@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'top',//组件名
+    name: 'now',//组件名
     data() {
       return {
         currentdate:''
@@ -80,6 +80,8 @@
   @import "../../../static/site.vars.less";
 
   .now {
-
+    line-height: 0.5rem;
+    height: 0.5rem;
+    .font-dpr(18px);
   }
 </style>

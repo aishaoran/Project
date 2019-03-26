@@ -17,14 +17,13 @@
 
 <style lang="less">
   @import "../../static/site.comm.less";
-  @import "../../static/site.vars.less";
 
   .index {
-    margin-top: 1rem;
     padding: 0.05rem;
-    .font-dpr(14px);
+    .font-dpr(16px);
+    height: 100%;
+    box-sizing: border-box;
     .introduce{
-      height: 500px;
     }
   }
 </style>
