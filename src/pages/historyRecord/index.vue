@@ -20,7 +20,6 @@
 
 <style lang="less">
   @import "../../../static/site.comm.less";
-  @import "../../../static/site.vars.less";
   .historyIndex {
     padding: 0.05rem;
     .font-dpr(16px);

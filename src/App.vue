@@ -19,10 +19,10 @@
 </script>
 
 <style lang="less">
-  @import "./../static/site.vars.less";
+  @import "./../static/site.comm.less";
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', "SCREEN GP Sans SC", "Microsoft YaHei", sans-serif;
     text-align: center;
     height: calc(100% - 1rem);
     width: 10rem;

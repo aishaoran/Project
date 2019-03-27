@@ -1,7 +1,7 @@
 <template>
   <div class="trainIndex">
     <now></now>
-    在线训练的公共层，在线训练的所有子页面都有此段
+    <!--在线训练的公共层，在线训练的所有子页面都有此段-->
     <router-view></router-view><!--路由出口-->
   </div>
 </template>
@@ -20,7 +20,6 @@
 
 <style lang="less">
   @import "../../../static/site.comm.less";
-  @import "../../../static/site.vars.less";
 
   .trainIndex {
     padding: 0.05rem;

@@ -16,7 +16,7 @@
         topList: [
           {name:"首页",url:'#/index'},
           {name: "在线训练", url: '#/trainType'},
-          {name: "历史记录", url: '#/historyRecord/home'}
+          {name: "历史记录", url: '#/historyRecord'}
         ]
       }
     },
@@ -44,8 +44,7 @@
     width: 9rem;
     border-radius: 0px 0px 10px 10px;
     .font-dpr(18px);
-    background: url("../../../static/img/nav.png") repeat-x;
-    color: @div_bk_color;
+    background: @nav_bk_color;
     position: fixed;
     top:0;
     left: 50%;

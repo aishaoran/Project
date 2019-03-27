@@ -68,7 +68,7 @@
               seconds = "0" + seconds;
             }
             _this.currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate + " " + hours + seperator2 + minutes + seperator2 + seconds + " " + week;
-          }, 1000);//1000毫秒后启动定时器
+          }, 100);//100毫秒后启动定时器
       }
 
     },
@@ -80,8 +80,10 @@
   @import "../../../static/site.vars.less";
 
   .now {
-    line-height: 0.5rem;
-    height: 0.5rem;
+    margin-right: 0.4rem;
+    text-align: right;
+    font-family: Georgia, 'Comic Sans MS', sans-serif;
+    line-height: 0.8rem;
     .font-dpr(18px);
   }
 </style>
