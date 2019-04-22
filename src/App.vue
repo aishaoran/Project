@@ -21,6 +21,7 @@
 <style lang="less">
   @import "./../static/site.comm.less";
 
+  .el-message-box{width: 80%;}
   #app {
     font-family: 'Lato', "SCREEN GP Sans SC", "Microsoft YaHei", sans-serif;
     text-align: center;

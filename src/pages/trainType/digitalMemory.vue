@@ -1,7 +1,7 @@
 <template>
-  <div class="fastComputation">
-    <P class="theme">闪算训练</P>
-    <p class="content" @click="content =='答案?'?content = questionContent+questionAnswer:''">{{content}}</p>
+  <div class="digitalMemory">
+    <P class="theme">数字记忆</P>
+    <p class="content" @click="content =='答案?'?content =questionAnswer:''">{{content}}</p>
     <div class="answer" v-show="answerShow">
       <input type="text" v-model="userAnswer" placeholder="请输入答案"/>
       <button class="but" @click="commitAnswer">提交</button>
@@ -10,8 +10,10 @@
 </template>
 
 <script>
+  import questionBank from "../../store/modules/questionBank";
+
   export default {
-    name: 'fastComputation',
+    name: 'digitalMemory',
     data() {
       return {
         answerShow: false,//控制显示答案输入
@@ -63,6 +65,7 @@
           var i = 0;
           //根据题目数字(笔数)和时间控制循环
           this.timeOut = setInterval(function () {
+            //让连续的数字有闪烁的感觉，先隐藏500毫秒再显示
             contentDOM.visibility = 'hidden';
             clearInterval(domOut);
             domOut = setTimeout(() => {
@@ -77,47 +80,20 @@
               _this.answerShow = true;
             }
             i++;
-          }, _this.params.time * 1000);
+          }, _this.params.time * 1000+500);
         }
       },
       //插入题目和计算答案
       calculation() {
         this.fastList = [];
         this.questionContent = ''
-        switch (parseInt(this.params.rule)) {//规则判断
-          case 0://加减法
-            var number;
-            this.questionAnswer = 0;
-            //遍历笔数
-            for (var i = 0; i < this.params.numberCount; i++) {
-              //生成随机数
-              number = parseFloat((Math.random() * this.RandomNumbers(this.params.integerBit)).toFixed(this.params.floatBit))
-              //随机生成1或0   第一位数不能为负数
-              if (Math.floor(Math.random() * 2 && i != 0 && this.questionAnswer > number)) {
-                number = -number
-              }
-              this.fastList[i] = number
-              this.questionContent += i ? (number < 0 ? number : '+' + number) : number;
-              this.questionAnswer = parseFloat((this.questionAnswer + number).toFixed(this.params.floatBit));
-            }
-            this.questionContent += '='
-            break;
-          case 1://乘法
-            //生成两个随机数,并分别赋值给被乘数和乘数
-            this.fastList[0] = parseInt(Math.random() * this.RandomNumbers(this.params.integerBit));
-            this.fastList[1] = parseInt(Math.random() * this.RandomNumbers(this.params.floatBit));
-            this.questionContent += this.fastList[0] + '×' + this.fastList[1] + '=';
-            this.questionAnswer = this.fastList[0] * this.fastList[1];
-            break;
-          case 2://除法
-            //生成两个随机数,并分别赋值给被乘数和乘数
-            this.fastList[0] = parseInt(Math.random() * this.RandomNumbers(this.params.integerBit));
-            this.fastList[1] = parseInt(Math.random() * this.RandomNumbers(this.params.floatBit));
-            this.fastList[0] = this.fastList[0] - this.fastList[0] % this.fastList[1];
-            this.questionContent += this.fastList[0] + '÷' + this.fastList[1] + '=';
-            this.questionAnswer = this.fastList[0] / this.fastList[1];
-            break;
+        //生成随机数
+        for (var i=0;i<this.params.numberCount;i++) {
+          var number = this.RandomNumbers()
+          this.questionContent+=number;
+          this.fastList.push(number);
         }
+        this.questionAnswer=this.questionContent;
       },
       //提交答案
       commitAnswer() {
@@ -134,11 +110,11 @@
         } else if (this.questionAnswer == this.userAnswer) {
           this.messageInfo('回答正确','小朋友，你真棒!','success')
 
-        } else if (Math.abs(this.questionAnswer - this.userAnswer) <= 3) {
+        }/* else if (Math.abs(this.questionAnswer - this.userAnswer) <= 3) {
           this.messageInfo('再接再厉','你离正确答案只差' + Math.abs(this.questionAnswer - this.userAnswer),'info')
-        }
+        }*/
         else {
-          this.messageInfo('惨败','只要功夫深，铁杵磨成针','error')
+          this.messageInfo('惨败','只要坚持不懈，总会有成功','error')
         }
       },
       //消息提示框
@@ -163,12 +139,9 @@
       },
 
       //生成随机数
-      RandomNumbers(count) {
-        var n = 1;//设置整数位基数
-        for (var i = 1; i <= count; i++) {
-          n *= 10;
-        }
-        return n;
+      RandomNumbers() {
+        var n =parseInt(Math.random() * 10)
+        return n==0||n ==1?this.RandomNumbers():n;
       }
     }
   }
@@ -177,7 +150,7 @@
 <style lang="less">
   @import "./../../../static/site.vars.less";
 
-  .fastComputation {
+  .digitalMemory {
     height: 100%;
     background: url("./../../../static/img/train_bk.png") no-repeat center 75%;
     background-size: 70% 50%;
